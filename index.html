@@ -2,102 +2,264 @@
 <html lang="zh-Hant">
 <head>
   <meta charset="UTF-8" />
-  <title>接案工程師 | Freelance Software Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
+  <title>自由接案軟體工程師｜Freelance Software Engineer</title>
+  <meta name="description" content="網站／系統／APP 開發。Laravel 全端、Spring Boot 後端、Flutter 跨平台。可單案或長期合作。" />
 
-  <!-- Language Switch -->
-  <div class="lang-switch">
-    <button onclick="setLang('zh')">中文</button>
-    <button onclick="setLang('en')">EN</button>
+  <style>
+    :root{
+      --bg:#ffffff;
+      --text:#111111;
+      --muted:#4b5563;
+      --border:#e5e7eb;
+      --chip:#f3f4f6;
+      --max: 920px;
+    }
+
+    *{ box-sizing:border-box; }
+
+    body{
+      margin:0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans TC",
+                   "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    .wrap{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 56px 28px 80px;
+    }
+
+    /* Top language switch */
+    .topbar{
+      position: sticky;
+      top: 0;
+      background: rgba(255,255,255,.92);
+      backdrop-filter: blur(6px);
+      border-bottom: 1px solid transparent;
+      z-index: 50;
+    }
+
+    .topbar-inner{
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 12px 28px;
+      display:flex;
+      justify-content:flex-end;
+      gap:10px;
+    }
+
+    .btn{
+      appearance:none;
+      border:1px solid var(--border);
+      background:#fff;
+      color:var(--text);
+      padding:8px 12px;
+      border-radius:10px;
+      font-weight:600;
+      cursor:pointer;
+      transition: transform .05s ease, background .15s ease;
+    }
+    .btn:hover{ background: #fafafa; }
+    .btn:active{ transform: translateY(1px); }
+    .btn.active{
+      background: var(--chip);
+      border-color: #d1d5db;
+    }
+
+    /* Headings */
+    h1{
+      margin: 0 0 10px;
+      font-size: clamp(34px, 5vw, 54px);
+      letter-spacing: -0.02em;
+    }
+    .subtitle{
+      margin: 0 0 10px;
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--muted);
+    }
+    .lead{
+      margin: 0;
+      font-size: 18px;
+      color: var(--text);
+      max-width: 52ch;
+    }
+
+    h2{
+      margin: 44px 0 14px;
+      font-size: 34px;
+      letter-spacing: -0.02em;
+    }
+
+    /* Lists */
+    ul{
+      margin: 0;
+      padding-left: 22px;
+    }
+    li{
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    /* Sections spacing */
+    .section{
+      margin-top: 10px;
+    }
+
+    /* Contact */
+    .contact p{
+      margin: 10px 0;
+      font-size: 18px;
+    }
+    .contact a{
+      color: inherit;
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    /* Language blocks */
+    [data-lang]{
+      display:none; /* JS will show the active language */
+    }
+
+    /* Small helpers */
+    .hr{
+      height:1px;
+      background: var(--border);
+      margin: 26px 0 0;
+    }
+
+    /* Mobile tweaks */
+    @media (max-width: 520px){
+      .wrap{ padding: 40px 18px 64px; }
+      .topbar-inner{ padding: 10px 18px; }
+      h2{ font-size: 30px; }
+      li, .lead, .contact p{ font-size: 17px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="topbar">
+    <div class="topbar-inner">
+      <button class="btn" id="btn-zh" type="button" onclick="setLang('zh')">中文</button>
+      <button class="btn" id="btn-en" type="button" onclick="setLang('en')">EN</button>
+    </div>
   </div>
 
-  <!-- Hero -->
-  <section class="hero">
-    <h1 data-lang="zh">自由接案軟體工程師</h1>
-    <h1 data-lang="en">Freelance Software Engineer</h1>
+  <main class="wrap">
+    <!-- HERO -->
+    <header>
+      <h1 data-lang="zh">自由接案軟體工程師</h1>
+      <h1 data-lang="en">Freelance Software Engineer</h1>
 
-    <p class="subtitle" data-lang="zh">
-      網站 · 系統 · APP 開發
-    </p>
-    <p class="subtitle" data-lang="en">
-      Website · System · Mobile App Development
-    </p>
+      <p class="subtitle" data-lang="zh">網站・系統・APP 開發</p>
+      <p class="subtitle" data-lang="en">Website · System · Mobile App Development</p>
 
-    <p data-lang="zh">
-      我協助創業者、公司與個人，將想法落實成實際可用的產品。
-    </p>
-    <p data-lang="en">
-      I help startups, companies, and individuals turn ideas into real,
-      usable products.
-    </p>
-  </section>
+      <p class="lead" data-lang="zh">我協助創業者、公司與個人，將想法落實成實際可用的產品。</p>
+      <p class="lead" data-lang="en">I help startups, companies, and individuals turn ideas into real, usable products.</p>
+    </header>
 
-  <!-- Services -->
-  <section>
-    <h2 data-lang="zh">服務項目</h2>
-    <h2 data-lang="en">Services</h2>
+    <!-- SERVICES -->
+    <section class="section">
+      <h2 data-lang="zh">服務項目</h2>
+      <h2 data-lang="en">Services</h2>
 
-    <ul data-lang="zh">
-      <li>企業形象官網與後台系統</li>
-      <li>客製化系統開發（會員、預約、管理後台）</li>
-      <li>APP 開發（Flutter，iOS / Android）</li>
-      <li>既有專案接手、功能擴充與維護</li>
-    </ul>
+      <ul data-lang="zh">
+        <li>企業形象官網與後台系統</li>
+        <li>客製化系統開發（會員、預約、管理後台）</li>
+        <li>APP 開發（Flutter，iOS / Android）</li>
+        <li>既有專案接手、功能擴充與維護</li>
+      </ul>
 
-    <ul data-lang="en">
-      <li>Website development with admin panel</li>
-      <li>Custom system & backend API</li>
-      <li>Mobile app development (Flutter)</li>
-      <li>Project takeover, refactor, and maintenance</li>
-    </ul>
-  </section>
+      <ul data-lang="en">
+        <li>Corporate websites with admin/CMS</li>
+        <li>Custom systems (member, booking, admin panel)</li>
+        <li>Mobile app development (Flutter, iOS / Android)</li>
+        <li>Project takeover, feature expansion, and maintenance</li>
+      </ul>
+    </section>
 
-  <!-- Tech Stack -->
-  <section>
-    <h2 data-lang="zh">技術與工具</h2>
-    <h2 data-lang="en">Tech Stack</h2>
+    <!-- TECH -->
+    <section class="section">
+      <h2 data-lang="zh">技術與工具</h2>
+      <h2 data-lang="en">Tech Stack</h2>
 
-    <ul>
-      <li>PHP / Laravel（全端）</li>
-      <li>Java / Spring Boot（後端 API）</li>
-      <li>Flutter（iOS / Android）</li>
-      <li>RESTful API</li>
-      <li>Git / GitHub</li>
-    </ul>
-  </section>
+      <ul data-lang="zh">
+        <li>PHP / Laravel（全端）</li>
+        <li>Java / Spring Boot（後端 API）</li>
+        <li>Flutter（iOS / Android）</li>
+        <li>RESTful API</li>
+        <li>Git / GitHub</li>
+      </ul>
 
-  <!-- Why Me -->
-  <section>
-    <h2 data-lang="zh">合作特色</h2>
-    <h2 data-lang="en">Why Work With Me</h2>
+      <ul data-lang="en">
+        <li>PHP / Laravel (Full-stack)</li>
+        <li>Java / Spring Boot (Backend API)</li>
+        <li>Flutter (iOS / Android)</li>
+        <li>RESTful API</li>
+        <li>Git / GitHub</li>
+      </ul>
+    </section>
 
-    <ul data-lang="zh">
-      <li>開發前先協助釐清需求，避免踩雷</li>
-      <li>依預算分階段實作，保留擴充彈性</li>
-      <li>溝通清楚、進度透明</li>
-      <li>可單次專案或長期合作</li>
-    </ul>
+    <!-- WORKING STYLE -->
+    <section class="section">
+      <h2 data-lang="zh">合作特色</h2>
+      <h2 data-lang="en">Working Style</h2>
 
-    <ul data-lang="en">
-      <li>Requirement clarification before development</li>
-      <li>Cost-effective and scalable solutions</li>
-      <li>Clear communication and progress</li>
-      <li>Available for single project or long-term collaboration</li>
-    </ul>
-  </section>
+      <ul data-lang="zh">
+        <li>開發前先協助釐清需求，避免踩雷</li>
+        <li>依預算分階段實作，保留擴充彈性</li>
+        <li>溝通清楚、進度透明</li>
+        <li>可單次專案或長期合作</li>
+      </ul>
 
-  <!-- Contact -->
-  <section class="contact">
-    <h2 data-lang="zh">聯絡方式</h2>
-    <h2 data-lang="en">Contact</h2>
+      <ul data-lang="en">
+        <li>Clarify requirements before development</li>
+        <li>Phased delivery based on budget, scalable by design</li>
+        <li>Clear communication and transparent progress</li>
+        <li>Available for single projects or long-term collaboration</li>
+      </ul>
+    </section>
 
-    <p>Email: yourname@gmail.com</p>
-    <p>GitHub: github.com/yourname</p>
-  </section>
+    <!-- CONTACT -->
+    <section class="section contact">
+      <h2 data-lang="zh">聯絡方式</h2>
+      <h2 data-lang="en">Contact</h2>
 
-  <script src="lang.js"></script>
+      <!-- 請把以下改成你的 -->
+      <p data-lang="zh">Email：<a href="mailto:yourname@gmail.com">yourname@gmail.com</a></p>
+      <p data-lang="en">Email: <a href="mailto:yourname@gmail.com">yourname@gmail.com</a></p>
+
+      <p data-lang="zh">GitHub：<a href="https://github.com/yourname" target="_blank" rel="noopener">github.com/yourname</a></p>
+      <p data-lang="en">GitHub: <a href="https://github.com/yourname" target="_blank" rel="noopener">github.com/yourname</a></p>
+    </section>
+  </main>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll("[data-lang]").forEach(el => {
+        el.style.display = (el.getAttribute("data-lang") === lang) ? "block" : "none";
+      });
+
+      // Toggle button style
+      const zh = document.getElementById("btn-zh");
+      const en = document.getElementById("btn-en");
+      if (zh && en) {
+        zh.classList.toggle("active", lang === "zh");
+        en.classList.toggle("active", lang === "en");
+      }
+
+      // Update <html lang>
+      document.documentElement.lang = (lang === "zh") ? "zh-Hant" : "en";
+    }
+
+    // 預設中文
+    setLang("zh");
+  </script>
 </body>
 </html>
