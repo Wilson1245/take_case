@@ -1,0 +1,13 @@
+.lang-switch {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.lang-switch button {
+  margin-left: 6px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  background: #fff;
+  cursor: pointer;
+}
