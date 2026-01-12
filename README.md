@@ -51,19 +51,10 @@ I help startups, companies, and individuals turn ideas into real, usable product
 
 ## 📬 聯絡方式 | Contact
 
-- Email: your-email@gmail.com  
-- GitHub: https://github.com/yourname  
+- Email: wilson052864@gmail.com
+- GitHub: https://github.com/Wilson1245  
 
 歡迎來信或私訊，簡述您的需求，我會協助評估方向與時程。
-
----
-
-## 📁 專案結構 | Project Structure
-
-├── index.html # Main page
-├── style.css # Styles
-├── lang.js # Language switch (ZH / EN)
-└── README.md
 
 ---
 
